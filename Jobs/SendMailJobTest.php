@@ -5,6 +5,7 @@ namespace Spatie\Mailcoach\Tests\Jobs;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Queue;
 use Spatie\Mailcoach\Jobs\SendMailJob;
+use Spatie\Mailcoach\Jobs\SendCampaignJob;
 use Spatie\Mailcoach\Mails\CampaignMail;
 use Spatie\Mailcoach\Models\Send;
 use Spatie\Mailcoach\Tests\TestCase;
@@ -65,7 +66,7 @@ class SendMailJobTest extends TestCase
     }
 
     /** @test */
-    public function it_can_use_a_custom_mailable()
+    public function it_can_send_a_custom_mailable()
     {
         $pendingSend = factory(Send::class)->create();
 
